@@ -1,0 +1,27 @@
+# importing random module
+import random 
+# guessed word in the list
+word=["apple",'mango','banana','orange','watermelon']
+words=random.choice(word) # choosing random wise word
+guesses=''
+
+turn=12 #12 attempt
+while turn>0:
+    failed=0
+    guess=input("enter the character") #taking character from user
+    guesses += guess
+    for i in words:
+        if i in guesses:
+            print(i)
+        else:
+            print('_')
+            failed +=1
+    if guess not in words:
+        print('wrong input')
+        print(turn-1)
+    if failed==0:
+        print('you are win')
+        break
+    if turn==0:
+        print('you loose')
+    turn =turn-1
